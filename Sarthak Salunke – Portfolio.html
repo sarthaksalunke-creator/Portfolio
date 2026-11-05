@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sarthak Salunke – Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#F3F6FA;--surface:#FFFFFF;--ink:#101B2D;--mute:#56657B;--line:#D9E1EC;--accent:#0E8F7E;--accent-ink:#FFFFFF;--tint:#E3F4F1;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1422;--surface:#142033;--ink:#EAF0F8;--mute:#9AA9BE;--line:#243349;--accent:#3FD0BC;--accent-ink:#0C1422;--tint:#15343A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1422;--surface:#142033;--ink:#EAF0F8;--mute:#9AA9BE;--line:#243349;--accent:#3FD0BC;--accent-ink:#0C1422;--tint:#15343A;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+nav{display:flex;gap:22px;justify-content:flex-end;padding:20px 0;font-size:15px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+.hero{padding:40px 0 72px}
+.hero h1{font-size:clamp(44px,8vw,88px);font-weight:800;letter-spacing:-.03em;max-width:12ch}
+.hero p.lead{font-size:clamp(18px,2.2vw,22px);max-width:56ch;color:var(--mute);margin:24px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{transform:translateY(-1px)}
+.chain{display:flex;align-items:stretch;gap:0;margin-top:56px;flex-wrap:wrap}
+.node{flex:1 1 200px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+.node b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+.node span{color:var(--mute);font-size:15px}
+.node.mid{border-color:var(--accent);background:var(--tint)}
+.link{flex:0 0 40px;display:flex;align-items:center;justify-content:center}
+.link i{display:block;width:100%;height:2px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 12px);background-size:12px 2px;animation:flow 1.2s linear infinite}
+@keyframes flow{to{background-position:12px 0}}
+@media (max-width:640px){.link{flex-basis:28px;width:100%;height:28px}.link i{width:2px;height:100%;background:repeating-linear-gradient(180deg,var(--accent) 0 6px,transparent 6px 12px)}}
+@media (prefers-reduced-motion:reduce){.link i{animation:none}html{scroll-behavior:auto}}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(30px,4vw,42px);font-weight:700;letter-spacing:-.02em;margin-bottom:12px}
+.sub{color:var(--mute);max-width:60ch;margin:0 0 36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.card{background:var(--surface);border:1.5px solid var(--line);border-radius:16px;padding:26px}
+.card h3{font-size:24px;margin-bottom:8px}
+.card p{margin:0 0 18px;color:var(--mute)}
+.flow{display:flex;flex-direction:column;gap:0;margin:0 0 4px;padding:0;list-style:none}
+.flow li{padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;background:var(--bg)}
+.flow li.hl{border-color:var(--accent);background:var(--tint)}
+.flow li+li{margin-top:14px;position:relative}
+.flow li+li::before{content:"";position:absolute;left:24px;top:-14px;height:14px;border-left:2px dashed var(--accent)}
+.points{margin:28px 0 0;padding-left:20px;max-width:70ch}
+.points li{margin-bottom:10px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:30px}
+.skills h3{font-size:19px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{padding:6px 13px;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;font-size:15px}
+.edu{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+.edu h3{font-size:26px}
+.edu small{color:var(--mute);font-size:16px}
+.contact{padding-bottom:96px}
+.contact a.big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(22px,4.4vw,44px);letter-spacing:-.02em;text-decoration:none;border-bottom:3px solid var(--accent);word-break:break-all}
+footer{padding:24px 0;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Sections"><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a></nav>
+
+<header class="hero">
+<h1>Sarthak Salunke</h1>
+<p class="lead">First-year BBA student in Pune who builds no-code automations that turn repetitive manual work into reliable, hands-off processes. I’m interested in marketing, management and AI.</p>
+<div class="btns"><a class="btn main" href="#projects">See my projects</a><a class="btn" href="#contact">Get in touch</a></div>
+<div class="chain" role="img" aria-label="Example automation: a message arrives, an n8n workflow processes it, and an action is taken">
+<div class="node"><b>Trigger</b><span>A message or entry arrives</span></div>
+<div class="link"><i></i></div>
+<div class="node mid"><b>n8n workflow</b><span>Nodes, APIs and logic</span></div>
+<div class="link"><i></i></div>
+<div class="node"><b>Result</b><span>A reply, or a logged record</span></div>
+</div>
+</header>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="sub">Self-directed n8n automations, completed end to end, connecting apps and services through triggers, nodes and API-based workflows.</p>
+<div class="grid">
+<article class="card">
+<h3>Telegram bot</h3>
+<p>A bot that receives user messages and responds or performs actions automatically.</p>
+<ul class="flow"><li>User sends a Telegram message</li><li class="hl">n8n workflow reads and routes it</li><li>Bot replies or performs the action</li></ul>
+</article>
+<article class="card">
+<h3>Automated expense tracker</h3>
+<p>Captures expense entries and logs them in an organized format, cutting manual data entry.</p>
+<ul class="flow"><li>Expense entry is submitted</li><li class="hl">n8n workflow captures the details</li><li>Entry is logged in an organized format</li></ul>
+</article>
+</div>
+<ul class="points">
+<li>Tested and debugged workflows so they run reliably, handling data between different tools and platforms.</li>
+<li>Applied automation thinking to everyday and business problems, focusing on saving time and reducing errors.</li>
+</ul>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<p class="sub">A mix of hands-on automation tools and business fundamentals.</p>
+<div class="skills">
+<div><h3>Automation and technology</h3><ul class="chips"><li>n8n</li><li>Workflow automation</li><li>Telegram bot integration</li><li>API and webhook basics</li><li>AI tools and prompting</li></ul></div>
+<div><h3>Business and analytics</h3><ul class="chips"><li>Survey design</li><li>Primary market research</li><li>Excel / Google Sheets modeling</li></ul></div>
+<div><h3>Management</h3><ul class="chips"><li>Leadership</li><li>Time management</li><li>Task prioritization</li><li>Project coordination</li></ul></div>
+<div><h3>Professional</h3><ul class="chips"><li>Communication</li><li>Problem-solving</li><li>Collaboration</li><li>Adaptability</li><li>Quick learner</li></ul></div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="edu">
+<div><h3>Stride School of Business</h3><p style="margin:6px 0 0;color:var(--mute)">Bachelor of Business Administration (BBA), focusing on marketing, management and artificial intelligence.</p></div>
+<small>Pune, India · Started August 2026</small>
+</div>
+<p class="sub" style="margin:28px 0 0"><b style="color:var(--ink)">Interests:</b> marketing strategy, consumer behavior, business management, and applying AI and automation to improve business processes.</p>
+</section>
+
+<section id="contact" class="contact">
+<h2>Let’s talk</h2>
+<p class="sub">Open to internships, projects and conversations about marketing and automation.</p>
+<p><a class="big" href="mailto:sarthaksalunke015@gmail.com">sarthaksalunke015@gmail.com</a></p>
+<div class="btns" style="margin-top:28px"><a class="btn" href="https://linkedin.com/in/sarthaksalunke21" target="_blank" rel="noopener">LinkedIn</a></div>
+</section>
+</div>
+<footer><div class="wrap">© 2026 Sarthak Salunke · Pune, Maharashtra, India</div></footer>
+</body>
+</html>
